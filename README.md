@@ -1,9 +1,9 @@
 ### 1. For create many google map you can setup the config.php :
 
-	# You can create custom maps by using /modules/Simplegooglemap/config/config.php file. You will see an example usage
-		// We need 2 array for create Google Map
+You can create custom maps by using /modules/Simplegooglemap/config/config.php file. You will see an example usage
+We need 2 array for create Google Map
 		
-		### 1. Array For Map Configuration
+		// 1. Array For Map Configuration
 		$config['module_simplegooglemap_YOURMAPNAME'] = array(
 			'zoom' => 17,
 			'map_type' => 'SATELLITE', // SATELLITE, TERRAIN, ROADMAP, HYBRID
