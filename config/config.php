@@ -1,6 +1,6 @@
 <?php 
 
-$img_path = 'themes/default/assets/img/logo_google_map.png';
+$img_path = 'themes/default/assets/img/logo_google_map.png'; // IMG PATH
 
 $config['module_simplegooglemap_name'] = "Simple Google Map Module";
 
@@ -16,8 +16,8 @@ $config['module_simplegooglemap_contact'] = array(
 );
 
 $config['module_simplegooglemap_contact_marker_info'] = array(
-	'position' => '36.85405511948054, 28.276753033788964',
-	'icon' => base_url() . $img_path,
-	//'info_window_title' => 'module_simplegooglemap_example_marker_title',
-	//'info_window_description' => 'module_simplegooglemap_example_marker_description'
+	'position' => '36.85636870112647, 28.236310686262414', // My office coords :)
+	'icon' => base_url() . $img_path, // Also you can use image file
+	//'info_window_title' => 'module_simplegooglemap_example_marker_title', // You can use lang item
+	//'info_window_description' => 'module_simplegooglemap_example_marker_description' // You can use lang item
 );
