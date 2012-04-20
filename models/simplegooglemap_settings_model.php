@@ -224,7 +224,7 @@ class Simplegooglemap_settings_model extends Base_model
 				),
 				array(
 					'name' => 'default_marker_position',
-					'content' => '36.86000848002827, 28.270664419325158'
+					'content' => '36.85636870112647, 28.236310686262414'
 				),
 				array(
 					'name' => 'zoom_level',
