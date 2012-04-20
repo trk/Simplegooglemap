@@ -1,6 +1,6 @@
 ### 1. For create many google map you can setup the config.php :
-	<p>You can create custom maps by using <b>/modules/Simplegooglemap/config/config.php</b> file. You will see an example usage<p>
-	```html+php
+
+	# You can create custom maps by using /modules/Simplegooglemap/config/config.php file. You will see an example usage
 		// We need 2 array for create Google Map
 		
 		### 1. Array For Map Configuration
@@ -22,9 +22,8 @@
 			'info_window_title' => 'module_simplegooglemap_example_marker_title', // Using language file for multilang title, you can create a translation in your theme file
 			'info_window_description' => 'module_simplegooglemap_example_marker_description' // Using language file for multilang description, you can create a translation in your theme file
 		);
-	```
 ### 2. Module usage at Front Page of website :
-	```html+php
+
 		<!-- If want to use <b>config.php</b> file for create map need to use <b>name=\"YOUR-MAP-NAME\"</b> attribute : -->
 		<ion:simplegooglemap width="100%" height="300px" name="contact">
 			<ion:show_map />
@@ -34,12 +33,10 @@
 		<ion:simplegooglemap width="100%" height="300px">
 			<ion:show_map />
 		</ion:simplegooglemap>
-	```
 	
 ### 3. Marker info window output like :
-	```html+php
+
 		<div class="map_info_windo\">
 			<h2>Marker Title</h2>
 			<p>Your maarker description</p>
 		</div>
-	```
