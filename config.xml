@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-	<name>Simple Google Map Module</name>
+	<name>Simple Google Map</name>
 	<description>Add a simple google map to your website // Author : ukyo | web : http://www.6ve1.com</description>
 	<uri_segment>simplegooglemap</uri_segment>
 	<has_admin>true</has_admin>
