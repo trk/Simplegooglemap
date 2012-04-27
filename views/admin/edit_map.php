@@ -11,9 +11,9 @@
 <head>
     <meta charset="utf-8">
     <title><?= lang('module_simplegooglemap_module_name') ?></title>
-    <link href="<?php echo base_url(); ?>modules/Simplegooglemap/assets/less/bootstrap.less" rel="stylesheet/less">
-    <script type="text/javascript" src="<?php echo base_url(); ?>modules/Simplegooglemap/assets/js/less-1.3.0.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>modules/Simplegooglemap/assets/js/jquery-1.7.1.min.js"></script>
+    <link href="<?php echo base_url(); ?>modules/Simplegooglemap/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>modules/Simplegooglemap/assets/css/simplegooglemap.css" rel="stylesheet" />
+    <script type="text/javascript" src="<?php echo base_url(); ?>modules/Simplegooglemap/assets/js/jquery-1.7.2.min.js"></script>
     <!--[if lt IE 9]>
         <script src="<?php echo base_url(); ?>modules/Simplegooglemap/assets/js/html5.js"></script>
     <![endif]-->
