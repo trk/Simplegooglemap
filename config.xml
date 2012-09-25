@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-	<name>Simple Google Map</name>
-	<description>Add a simple google map to your website // Author : ukyo | web : http://www.6ve1.com</description>
-	<uri_segment>simplegooglemap</uri_segment>
-	<has_admin>true</has_admin>
-	<access_group>admins</access_group>
-	<database>
-		<table name="module_simplegooglemap_settings" if_not_exists="true" engine="InnoDB" default_charset="utf8" collate="utf8_unicode_ci" auto_increment="1">
-			<primary_key>id_setting</primary_key>
-			<column name="id_setting" type="int" length="11" attributes="UNSIGNED" zerofill="NOT NULL" auto_increment="true" ></column>
-			<column name="name" type="varchar" length="255" zerofill="NOT NULL"></column>
-			<column name="content" type="text" length="0"></column>
-			<column name="lang" type="char" length="3"></column>
-		</table>
-	</database>
+    <name>Simple Google Map</name>
+    <description>Add a simple google map to your website // Author : ukyo | web : http://www.altivebir.com.tr</description>
+    <uri_segment>simplegooglemap</uri_segment>
+    <has_admin>true</has_admin>
+    <access_group>editors</access_group>
+    <database script="database.xml"></database>
 </module>

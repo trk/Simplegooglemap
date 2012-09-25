@@ -8,6 +8,8 @@ $lang['module_simplegooglemap_edit_map'] = "Haritayı Düzenle";
 
 $lang['module_simplegooglemap_drag_and_drop_marker'] = 'Markerı sürükleyip bırakabilirsiniz';
 $lang['module_simplegooglemap_default_marker_position'] = 'Varsayılan Marker Pozisyonu';
+$lang['module_simplegooglemap_width'] = 'Genişlik';
+$lang['module_simplegooglemap_height'] = 'Yükseklik';
 $lang['module_simplegooglemap_zoom_level'] = 'Yakınlaştırma Seviyesi';
 $lang['module_simplegooglemap_map_type'] = 'Harita Tipi';
 	$lang['module_simplegooglemap_map_type_satellite'] = 'Uydu';

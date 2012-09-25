@@ -8,6 +8,8 @@ $lang['module_simplegooglemap_edit_map'] = "Edit Map";
 
 $lang['module_simplegooglemap_drag_and_drop_marker'] = 'You can drag and drop marker';
 $lang['module_simplegooglemap_default_marker_position'] = 'Default Marker Position';
+$lang['module_simplegooglemap_width'] = 'Width';
+$lang['module_simplegooglemap_height'] = 'Height';
 $lang['module_simplegooglemap_zoom_level'] = 'Zoom Level';
 $lang['module_simplegooglemap_map_type'] = 'Map Type';
 	$lang['module_simplegooglemap_map_type_satellite'] = 'Satellite';

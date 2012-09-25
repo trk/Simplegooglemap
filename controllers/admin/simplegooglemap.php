@@ -11,43 +11,62 @@ class Simplegooglemap extends Module_Admin
 {
 	function construct()
 	{
-		$this->load->model('Simplegooglemap_settings_model', 'simplegooglemap_model', true);
-		
-		$this->table =		'module_simplegooglemap_settings';
-        $this->pk_name 	=	'id_setting';
-		$this->controller_url = admin_url() . 'module/simplegooglemap/';
+        // Controller URL & Controller Fodler
+        $this->controller_url = config_item('module_simplegooglemap_url') . 'simplegooglemap/';
+        $this->controller_folder = 'admin/simplegooglemap/';
+
+        // Load Model File For Module
+        $this->load->model('Simplegooglemap_model', 'model_simplegooglemap');
+
+        $this->table = 'module_simplegooglemap_settings';
+        $this->pk_name = 'id_setting';
+
+        // Send Controller URL to Templates
+        $this->template['controller_url'] = $this->controller_url;
 	}
 
-	function index()
+    /**
+     *
+     */
+    function index()
 	{
-		$this->simplegooglemap_model->simplemap_module_installer();
-		
-		$this->output('admin/simplegooglemap');
+        $this->template['settings'] = $this->model_simplegooglemap->get_settings();
+
+		$this->output($this->controller_folder . 'index');
 	}
-	
-	function map_view(){
+
+    /**
+     *
+     */
+    function view_map(){
+
+		$this->template['map'] = $this->model_simplegooglemap->get_map();
 		
-		$this->template['map'] = $this->simplegooglemap_model->get_map();
-		
-		$this->output('admin/map_view');
+		$this->output($this->controller_folder . 'view');
 	}
-	function edit_map(){
+
+    /**
+     *
+     */
+    function edit_map(){
 		
-		$this->simplegooglemap_model->_check_lang_data_and_save();
+		$this->model_simplegooglemap->_check_lang_data_and_save();
 		
-		$this->template['lang_data'] = $this->simplegooglemap_model->get_lang_data();
+		$this->template['lang_data'] = $this->model_simplegooglemap->get_lang_data();
 		
-		$this->template['controller_url'] = $this->controller_url;
+		$this->template['settings'] = $this->model_simplegooglemap->get_settings();
 		
-		$this->template['settings'] = $this->simplegooglemap_model->moduleSettings();
-		
-		$this->output('admin/edit_map');
+		$this->output($this->controller_folder . 'edit');
 	}
-	
-	function saveSettings(){
+
+    /**
+     *
+     */
+    function saveSettings(){
     	if($this->input->post('mapType') != '' && $this->input->post('mapTypeControl') != '' && $this->input->post('markerPosition') != ''
     		&& $this->input->post('overviewMapControl') != '' && $this->input->post('panControl') != '' && $this->input->post('scaleControl') != ''
-    		&& $this->input->post('streetViewControl') != '' && $this->input->post('zoomControl') != '' && $this->input->post('zoomLevel') != '')
+    		&& $this->input->post('streetViewControl') != '' && $this->input->post('zoomControl') != '' && $this->input->post('zoomLevel') != ''
+            && $this->input->post('height') != '' && $this->input->post('width') != '')
 		{
 			$data = array(
 				'map_type' => $this->input->post('mapType'),
@@ -58,10 +77,12 @@ class Simplegooglemap extends Module_Admin
 				'scale_control' => $this->input->post('scaleControl'),
 				'street_view_control' => $this->input->post('streetViewControl'),
 				'zoom_control' => $this->input->post('zoomControl'),
-				'zoom_level' => $this->input->post('zoomLevel')
+				'zoom_level' => $this->input->post('zoomLevel'),
+                'height' => $this->input->post('height'),
+                'width' => $this->input->post('width')
 			);
 			
-			if($this->simplegooglemap_model->saveModuleSettings($data)){
+			if($this->model_simplegooglemap->saveModuleSettings($data)){
 					
 				foreach(Settings::get_languages() as $l){			
 					$title = array(
@@ -69,14 +90,14 @@ class Simplegooglemap extends Module_Admin
 						'content' => $this->input->post('title_' . $l['lang']),
 						'lang' => $l['lang']
 					);
-					$this->simplegooglemap_model->_check_lang_data_and_save($title);
+					$this->model_simplegooglemap->_check_lang_data_and_save($title);
 					
 					$description = array(
 						'name' => 'description',
 						'content' => $this->input->post('description_' . $l['lang']),
 						'lang' => $l['lang']
 					);
-					$this->simplegooglemap_model->_check_lang_data_and_save($description);
+					$this->model_simplegooglemap->_check_lang_data_and_save($description);
 				}
 				
 				echo json_encode('success');

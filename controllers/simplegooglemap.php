@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Simplegooglemap extends My_Controller 
+class Simplegooglemap extends Base_Controller
 {
 	public function __construct()
 	{
@@ -10,6 +10,7 @@ class Simplegooglemap extends My_Controller
 
 	function index()
 	{
+        echo theme_url();
 		print "Simple Google Map Module";
 	}
 }

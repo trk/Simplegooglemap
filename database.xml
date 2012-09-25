@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql>
+	<name>Ionize Simple Google Map Module Database Creation</name>
+	<version>1.0</version>
+	<license>http://www.altivebir.com.tr/licenses</license>
+
+	<!--
+		Module's tables
+		Prefixed by module_<module name> to avoid collision
+	-->
+	<tables>
+
+		<!--
+			Rates Table
+		-->
+		<query>
+			CREATE TABLE IF NOT EXISTS module_simplegooglemap_settings (
+                id_setting INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+				name VARCHAR(255),
+				content TEXT(0),
+				lang VARCHAR(3),
+				PRIMARY KEY (id_setting)
+			)
+			ENGINE = InnoDB
+			AUTO_INCREMENT = 1
+			DEFAULT CHARACTER SET = utf8
+			COLLATE = utf8_unicode_ci;
+		</query>
+				
+	</tables>
+
+    <!--
+		Content inserted at module's installation
+	-->
+    <content>
+
+        <query>
+            INSERT IGNORE INTO module_simplegooglemap_settings (id_setting, name, content, lang)
+            VALUES
+            (1, 'width', '100%', NULL),
+            (2, 'height', '400px', NULL),
+            (3, 'map_type', 'SATELLITE', NULL),
+            (4, 'map_type_control', 'false', NULL),
+            (5, 'pan_control', 'false', NULL),
+            (6, 'zoom_control', 'false', NULL),
+            (7, 'scale_control', 'false', NULL),
+            (8, 'street_view_control', 'false', NULL),
+            (9, 'overview_map_control', 'false', NULL),
+            (10, 'zoom_level', '9', NULL),
+            (11, 'default_marker_position', '36.85636870112647, 28.236278499754235', NULL),
+            (12, 'title', 'ALTI ve BIR IT.', 'en'),
+            (13, 'description', 'Web Design Agency Marmaris / Turkey http://www.altivebir.com.tr', 'en'),
+            (14, 'title', 'ALTI ve BIR BILISIM TEKNOLOJILERI.', 'tr'),
+            (15, 'description', 'Internet Sitesi Tasarım Ajansı Marmaris / Turkiye http://www.altivebir.com.tr', 'tr');
+        </query>
+
+    </content>
+</sql>
