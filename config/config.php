@@ -1,5 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+//***************************** MODULE SETTINGS START (Don't Modify This Section!) ----------------------------------------------------------//
+
 // Module Settings
 $config['module_simplegooglemap_name'] = 'Simple Google Map Module';
 
@@ -18,10 +20,22 @@ $config['module_simplegooglemap_assets_folder'] = base_url(). 'modules/' . $conf
 // Module View Folder
 $config['module_simplegooglemap_views_folder'] = base_url(). 'modules/' . $config['module_simplegooglemap_folder'] . '/views/';
 
+//***************************** MODULE SETTINGS END (Don't Modify This Section!) ----------------------------------------------------------//
 
-$img_path = 'assets/images/marker_logo.png';
 
-$config['module_simplegooglemap_name'] = "Simple Google Map Module";
+
+//***************************** MAP SETTINGS START ----------------------------------------------------------//
+
+/**
+ * <ion:theme_url /> defined. just type your google map logo path in your theme folder!
+ *
+ * example :
+ *      Your Logo Path is => http://www.yoursitename.com/themes/your_theme/assets/images/googlemap_logo.png
+ *      For this example just type : assets/images/googlemap_logo.png
+ *
+ */
+
+$img_path = 'assets/images/googlemap_logo.png';
 
 $config['module_simplegooglemap_contact'] = array(
 	'zoom' => 16,
@@ -40,3 +54,5 @@ $config['module_simplegooglemap_contact_marker_info'] = array(
 	//'info_window_title' => 'module_simplegooglemap_example_marker_title',
 	//'info_window_description' => 'module_simplegooglemap_example_marker_description'
 );
+
+//***************************** MAP SETTINGS END ----------------------------------------------------------//
